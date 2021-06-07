@@ -3,53 +3,53 @@ const BaseMask = require('./_base.mask');
 function getDefaultTranslation() {
     return {
         '9': function (val) {
-            return val.replace(/[^0-9]+/g, '')
+            return val.replace(/[^0-9]+/g, '');
         },
         A: function (val) {
-            return val.replace(/[^a-zA-Z]+/g, '')
+            return val.replace(/[^a-zA-Z]+/g, '');
         },
         S: function (val) {
-            return val.replace(/[^a-zA-Z0-9]+/g, '')
+            return val.replace(/[^a-zA-Z0-9]+/g, '');
         },
         '*': function (val) {
-            return val
+            return val;
         }
-    }
+    };
 }
 
 function toPattern(value, mask, translation) {
-    let result = ''
+    let result = '';
 
-    let maskCharIndex = 0
-    let valueCharIndex = 0
+    let maskCharIndex = 0;
+    let valueCharIndex = 0;
 
     while (true) {
         // if mask is ended, break.
         if (maskCharIndex === mask.length) {
-            break
+            break;
         }
 
         // if value is ended, break.
         if (valueCharIndex === value.length) {
-            break
+            break;
         }
 
-        let maskChar = mask[maskCharIndex]
-        let valueChar = value[valueCharIndex]
+        let maskChar = mask[maskCharIndex];
+        let valueChar = value[valueCharIndex];
 
         // value equals mask, just set
         if (maskChar === valueChar) {
-            result += maskChar
-            valueCharIndex += 1
-            maskCharIndex += 1
-            continue
+            result += maskChar;
+            valueCharIndex += 1;
+            maskCharIndex += 1;
+            continue;
         }
 
         // apply translator if match
-        const translationHandler = translation[maskChar]
+        const translationHandler = translation[maskChar];
 
         if (translationHandler) {
-            const resolverValue = translationHandler(valueChar || '')
+            const resolverValue = translationHandler(valueChar || '');
             if (resolverValue === '') {
                 //valueChar replaced so don't add it to result, keep the mask at the same point and continue to next value char
                 valueCharIndex += 1;
@@ -60,60 +60,60 @@ function toPattern(value, mask, translation) {
             } else {
                 result += maskChar;
             }
-            maskCharIndex += 1
-            continue
+            maskCharIndex += 1;
+            continue;
         }
 
         // not masked value, fixed char on mask
-        result += maskChar
-        maskCharIndex += 1
-        continue
+        result += maskChar;
+        maskCharIndex += 1;
+        continue;
     }
 
-    return result
+    return result;
 }
 
-const DEFAULT_TRANSLATION = getDefaultTranslation()
+const DEFAULT_TRANSLATION = getDefaultTranslation();
 
 class CustomMask extends BaseMask {
+
     static getType() {
-        return 'custom'
+        return 'custom';
     }
 
     static getDefaultTranslation() {
-        return getDefaultTranslation()
+        return getDefaultTranslation();
     }
 
-    static shared = new CustomMask()
+    static shared() {
+        return new CustomMask();
+    }
 
     getValue(value, settings) {
         if (value === '') {
-            return value
+            return value;
         }
-        let { mask } = settings
-        let translation = this.mergeSettings(
-            DEFAULT_TRANSLATION,
-            settings.translation
-        )
+        let { mask } = settings;
+        let translation = this.mergeSettings(DEFAULT_TRANSLATION, settings.translation);
 
-        var masked = toPattern(value, mask, translation)
-        return masked
+        var masked = toPattern(value, mask, translation);
+        return masked;
     }
 
     getRawValue(maskedValue, settings) {
         if (!!settings && settings.getRawValue) {
-            return settings.getRawValue(maskedValue, settings)
+            return settings.getRawValue(maskedValue, settings);
         }
 
-        return maskedValue
+        return maskedValue;
     }
 
     validate(value, settings) {
         if (!!settings && settings.validator) {
-            return settings.validator(value, settings)
+            return settings.validator(value, settings);
         }
 
-        return true
+        return true;
     }
 }
 
