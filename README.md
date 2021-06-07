@@ -13,7 +13,7 @@ or
 
 <br />
 
-## Usage (TextInputMask)
+## Usage (SimpleMask)
 
 For all the masks you will use in this way:
 
@@ -27,6 +27,8 @@ Mask:
 -   INTERNATIONAL: `+999 999 999 999`
 
 ```js
+import SimpleMask from 'simple-mask-text';
+
 SimpleMask.toMask('cel-phone', '11234567890', {
     maskType: 'BRL',
     withDDD: true,
@@ -63,6 +65,8 @@ SimpleMask.toRawValue('cel-phone', '(11) 23456-7890')
 Mask: `999.999.999-99`
 
 ```js
+import SimpleMask from 'simple-mask-text';
+
 SimpleMask.toMask('cpf', '26859785854')
 
 //return "268.597.858-54"
@@ -81,9 +85,11 @@ SimpleMask.toRawValue('cpf', '268.597.858-54')
 Mask: `99.999.999/9999-99`
 
 ```js
- SimpleMask.toMask('cnpj', '52541236000189')
+import SimpleMask from 'simple-mask-text';
 
- //return "52.541.236.0001-89"
+SimpleMask.toMask('cnpj', '52541236000189')
+
+//return "52.541.236.0001-89"
 
 
 /*REVERT TO ORIGINAL VALUE*/
@@ -103,6 +109,8 @@ Mask:
 -   diners: `9999 999999 9999` or `9999 ****** 9999` (obfuscated)
 
 ```js
+import SimpleMask from 'simple-mask-text';
+
 SimpleMask.toMask('credit-card', '999999999999999', {
   obfuscated: true
 })
@@ -144,7 +152,8 @@ Mask: `defined by pattern`
 Ex: `AAA-9999` 
 
 ```js
-// SIMPLE
+import SimpleMask from 'simple-mask-text';
+
 SimpleMask.toMask('custom', '123456', {
   /**
    * mask: (String | required | default '')
@@ -173,6 +182,8 @@ SimpleMask.toMask('custom', '123456', {
 Mask: `R$ 999,99` (fully customizable)
 
 ```js
+import SimpleMask from 'simple-mask-text';
+
 SimpleMask.toMask('money', parseFloat('100.5'), {
     precision: 2,
     separator: ',',
@@ -207,6 +218,8 @@ SimpleMask.toRawValue('money', 'R$ 100,50')
 Mask: `accept only numbers`
 
 ```js
+import SimpleMask from 'simple-mask-text';
+
 SimpleMask.toMask('only-numbers', 'AAL 36789 18900 0190')
 
 // return "36789189000190"
@@ -219,6 +232,8 @@ SimpleMask.toMask('only-numbers', 'AAL 36789 18900 0190')
 Mask: `99999-999`
 
 ```js
+import SimpleMask from 'simple-mask-text';
+
 SimpleMask.toMask('zip-code', '08150000')
 
 // return "08150-000"

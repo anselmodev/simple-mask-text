@@ -1,19 +1,14 @@
 {
     "name": "simple-mask-text",
     "version": "0.1.0",
-    "description": "Text and TextInput with mask for Javascript and Typescript applications",
+    "description": "Mask from Text and TextInput with mask for Javascript and Typescript applications",
     "licenses": [
         {
             "type": "MIT",
             "url": "https://www.opensource.org/licenses/mit-license.php"
         }
     ],
-    "main": "./dist/index.js",
-    "scripts": {
-        "clean": "rimraf dist",
-        "build": "babel ./index.js ./lib/*.js ./lib/**/*.js -d ./dist",
-        "start": "node lib/index-test.js"
-    },
+    "main": "./index.js",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/anselmodev/simple-mask-text.git"
@@ -32,11 +27,6 @@
     },
     "homepage": "https://github.com/anselmodev/simple-mask-text#readme",
     "dependencies": {
-        "date-and-time": "0.9.0",
-        "tinymask": "1.0.2"
-    },
-    "devDependencies": {
-        "babel-cli": "6.26.0",
-        "rimraf": "2.6.2"
+        "date-and-time": "0.9.0"
     }
 }
