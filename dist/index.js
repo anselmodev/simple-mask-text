@@ -1,3 +1,3 @@
-const MaskService = require('./lib/mask-service');
+const SimpleMask = require('./lib/mask-service');
 
-module.exports = MaskService;
+module.exports = SimpleMask;

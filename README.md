@@ -1,15 +1,15 @@
-# js-simple-mask
+# simple-mask-text
 
 
 This is a simple masked text (normal text and input text).
 
 ## Install
 
-`npm i js-simple-mask` 
+`npm i simple-mask-text` 
 
 or
 
-`yarn add js-simple-mask` 
+`yarn add simple-mask-text` 
 
 <br />
 
@@ -27,7 +27,7 @@ Mask:
 -   INTERNATIONAL: `+999 999 999 999`
 
 ```js
-MaskService.toMask('cel-phone', '11234567890', {
+SimpleMask.toMask('cel-phone', '11234567890', {
     maskType: 'BRL',
     withDDD: true,
     dddMask: '(99) '
@@ -36,7 +36,7 @@ MaskService.toMask('cel-phone', '11234567890', {
 // return "(11) 23456-7890"
 
 
-MaskService.toMask('cel-phone', '555555555555', {
+SimpleMask.toMask('cel-phone', '555555555555', {
   maskType: 'INTERNATIONAL',
 })
 
@@ -44,7 +44,7 @@ MaskService.toMask('cel-phone', '555555555555', {
 
 
 /*REVERT TO ORIGINAL VALUE*/
-MaskService.toRawValue('cel-phone', '(11) 23456-7890')
+SimpleMask.toRawValue('cel-phone', '(11) 23456-7890')
 
 // return "11234567890"
 ```
@@ -63,13 +63,13 @@ MaskService.toRawValue('cel-phone', '(11) 23456-7890')
 Mask: `999.999.999-99`
 
 ```js
-MaskService.toMask('cpf', '26859785854')
+SimpleMask.toMask('cpf', '26859785854')
 
 //return "268.597.858-54"
 
 
 /*REVERT TO ORIGINAL VALUE*/
-MaskService.toRawValue('cpf', '268.597.858-54')
+SimpleMask.toRawValue('cpf', '268.597.858-54')
 
 // return "26859785854"
 ```
@@ -81,13 +81,13 @@ MaskService.toRawValue('cpf', '268.597.858-54')
 Mask: `99.999.999/9999-99`
 
 ```js
- MaskService.toMask('cnpj', '52541236000189')
+ SimpleMask.toMask('cnpj', '52541236000189')
 
  //return "52.541.236.0001-89"
 
 
 /*REVERT TO ORIGINAL VALUE*/
-MaskService.toRawValue('cnpj', '52.541.236.0001-89')
+SimpleMask.toRawValue('cnpj', '52.541.236.0001-89')
 
 // return "52541236000189"
 ```
@@ -103,14 +103,14 @@ Mask:
 -   diners: `9999 999999 9999` or `9999 ****** 9999` (obfuscated)
 
 ```js
-MaskService.toMask('credit-card', '999999999999999', {
+SimpleMask.toMask('credit-card', '999999999999999', {
   obfuscated: true
 })
 
 // return "9999 **** **** 9999"
 
 
-MaskService.toMask('credit-card', '999999999999999', {
+SimpleMask.toMask('credit-card', '999999999999999', {
   obfuscated: false
 })
 
@@ -118,7 +118,7 @@ MaskService.toMask('credit-card', '999999999999999', {
 
 
 /*REVERT TO ORIGINAL VALUE*/
-MaskService.toRawValue('credit-card', '9999 9999 9999 9999')
+SimpleMask.toRawValue('credit-card', '9999 9999 9999 9999')
 
 // return [ '999', '999', '999', '999', '999' ] {array}
 ```
@@ -145,7 +145,7 @@ Ex: `AAA-9999`
 
 ```js
 // SIMPLE
-MaskService.toMask('custom', '123456', {
+SimpleMask.toMask('custom', '123456', {
   /**
    * mask: (String | required | default '')
    * the mask pattern
@@ -173,7 +173,7 @@ MaskService.toMask('custom', '123456', {
 Mask: `R$ 999,99` (fully customizable)
 
 ```js
-MaskService.toMask('money', parseFloat('100.5'), {
+SimpleMask.toMask('money', parseFloat('100.5'), {
     precision: 2,
     separator: ',',
     delimiter: '.',
@@ -185,7 +185,7 @@ MaskService.toMask('money', parseFloat('100.5'), {
 
 
 /*REVERT TO ORIGINAL VALUE*/
-MaskService.toRawValue('money', 'R$ 100,50')
+SimpleMask.toRawValue('money', 'R$ 100,50')
 
 // return 100.5 {number}
 ```
@@ -207,7 +207,7 @@ MaskService.toRawValue('money', 'R$ 100,50')
 Mask: `accept only numbers`
 
 ```js
-MaskService.toMask('only-numbers', 'AAL 36789 18900 0190')
+SimpleMask.toMask('only-numbers', 'AAL 36789 18900 0190')
 
 // return "36789189000190"
 ```
@@ -219,13 +219,13 @@ MaskService.toMask('only-numbers', 'AAL 36789 18900 0190')
 Mask: `99999-999`
 
 ```js
-MaskService.toMask('zip-code', '08150000')
+SimpleMask.toMask('zip-code', '08150000')
 
 // return "08150-000"
 
 
 /*REVERT TO ORIGINAL VALUE*/
-MaskService.toRawValue('zip-code', '08150-000')
+SimpleMask.toRawValue('zip-code', '08150-000')
 
 // return "08150000"
 ```

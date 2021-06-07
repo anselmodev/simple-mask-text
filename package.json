@@ -1,6 +1,6 @@
 {
-    "name": "js-simple-mask",
-    "version": "0.1.5",
+    "name": "simple-mask-text",
+    "version": "0.1.0",
     "description": "Text and TextInput with mask for Javascript and Typescript applications",
     "licenses": [
         {
@@ -16,7 +16,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/anselmodev/js-simple-mask.git"
+        "url": "git+https://github.com/anselmodev/simple-mask-text.git"
     },
     "keywords": [
         "mask",
@@ -28,9 +28,9 @@
     "author": "Anselmo Lima - @anselmodev",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/anselmodev/js-simple-mask/issues"
+        "url": "https://github.com/anselmodev/simple-mask-text/issues"
     },
-    "homepage": "https://github.com/anselmodev/js-simple-mask#readme",
+    "homepage": "https://github.com/anselmodev/simple-mask-text#readme",
     "dependencies": {
         "date-and-time": "0.9.0",
         "tinymask": "1.0.2"
