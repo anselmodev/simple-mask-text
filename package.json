@@ -1,6 +1,6 @@
 {
     "name": "js-simple-mask",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "Text and TextInput with mask for Javascript and Typescript applications",
     "licenses": [
         {
@@ -8,10 +8,10 @@
             "url": "https://www.opensource.org/licenses/mit-license.php"
         }
     ],
-    "main": "./dist/jssmk.js",
+    "main": "./dist/index.js",
     "scripts": {
         "clean": "rimraf dist",
-        "build": "babel ./jssmk.js ./lib/*.js ./lib/**/*.js -d ./dist",
+        "build": "babel ./index.js ./lib/*.js ./lib/**/*.js -d ./dist",
         "start": "node lib/index-test.js"
     },
     "repository": {
