@@ -1,6 +1,6 @@
 {
     "name": "simple-mask-text",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "description": "Mask from Text and TextInput with mask for Javascript and Typescript applications",
     "licenses": [
         {
