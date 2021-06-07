@@ -1,6 +1,6 @@
 {
     "name": "js-simple-mask",
-    "version": "1.13.0",
+    "version": "0.1.0",
     "description": "Text and TextInput with mask for Javascript and Typescript applications",
     "licenses": [
         {
@@ -12,12 +12,11 @@
     "scripts": {
         "clean": "rimraf dist",
         "build": "babel ./rnmt.js ./lib/*.js ./lib/**/*.js -d ./dist",
-        "prepublish": "npm run clean && npm run build",
         "start": "node lib/index-test.js"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/benhurott/react-native-masked-text.git"
+        "url": "git+https://github.com/anselmodev/js-simple-mask.git"
     },
     "keywords": [
         "mask",
@@ -26,12 +25,12 @@
         "custom",
         "money"
     ],
-    "author": "Ben-hur Santos Ott",
+    "author": "Anselmo Lima - @anselmodev",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/benhurott/react-native-masked-text/issues"
+        "url": "https://github.com/anselmodev/js-simple-mask/issues"
     },
-    "homepage": "https://github.com/benhurott/react-native-masked-text#readme",
+    "homepage": "https://github.com/anselmodev/js-simple-mask#readme",
     "dependencies": {
         "date-and-time": "0.9.0",
         "tinymask": "1.0.2"

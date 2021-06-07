@@ -1,3 +1,3 @@
-import MaskService from './lib/mask-service';
+const MaskService = require('./lib/mask-service');
 
-export default MaskService;
+module.exports.MaskService = MaskService;

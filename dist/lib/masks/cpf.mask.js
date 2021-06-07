@@ -78,4 +78,3 @@ class CpfMask extends BaseMask {
 }
 
 module.exports = CpfMask;
-module.exports = { CPF_MASK, validateCPF };

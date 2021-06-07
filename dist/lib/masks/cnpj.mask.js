@@ -49,4 +49,3 @@ class CnpjMask extends BaseMask {
 }
 
 module.exports = CnpjMask;
-module.exports = { CNPJ_MASK, validateCnpj };
