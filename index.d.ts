@@ -1,11 +1,3 @@
-/**
- * Type Definition.
- *
- * Using with Typescript development.
- *
- * Definitions by: Italo Izaac <https://github.com/iiandrade>
- */
-
 // Option prop of TextInputMask.
 export interface TextInputMaskOptionProp {
     // Money type.
